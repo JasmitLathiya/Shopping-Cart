@@ -25,22 +25,30 @@ body{
 
 
 .leftColumn{
+    margin-top: 50px;
     width: 70%;
 }
 
 .rightColumn{
     width: 30%;
     height: 100%;
+    background-color: #bbf0ea;
 }
 
 hr{
     border-color: gray;
     border-width: 1px;
-    width: inherit;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.yourCart{
+    margin: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .item1{
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .itemImage,.itemDescription,.itemCounter,.itemPriceRemove{
@@ -103,6 +111,10 @@ hr{
     font-size: 1.2em;
     border-radius: 5px;
      
+}
+
+.remove:active,.proceed:active{
+    background-color: black;
 }
 
 .totalCost{
