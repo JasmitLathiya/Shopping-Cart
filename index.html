@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shopping Cart</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+
+    <body>
+        <h1 class="heading">Shopping Cart</h1>
+
+        <div class="row">
+            <div class="leftColumn">
+                <h2 >Your Cart</h2>
+
+                <div class="item1">
+                    <img class="itemImage" src="./assets/tshirt.png" alt="T-shirt Image">
+                    <div class="itemDescription">
+                        <text class="itemName">T-Shirt</text>
+                        <br>
+                        <br>
+                        <text class="itemColor">Color : Blue</text>
+                        <br>
+                        <text class="itemSize">Size : M</text>
+                    </div>
+                    <div class="itemCounter">
+                        <!-- <text>Quantity : </text> -->
+                        <button class="decrease">-</button>
+                        <input class="count" type="number" min="0" value="2">
+                        <button class="increase">+</button>
+                    </div>
+                    <div class="itemPriceRemove">
+                        <text class="totalPrice">Total Price : <b>900 Rs</b></text>
+                        <br>
+                        <br>
+                        <text class="itemPrice">Price per item : 450 Rs</text>
+                        <br>
+                        <br>
+                        <br>
+                        <button class="remove">Remove</button>
+                    </div>
+                </div>
+<hr>
+
+                <div class="item2">
+                    <img class="itemImage" src="./assets/pant.png" alt="Jeans Image">
+                    <div class="itemDescription">
+                        <text class="itemName">Jeans Pant</text>
+                        <br>
+                        <br>
+                        <text class="itemColor">Color : Blue</text>
+                        <br>
+                        <text class="itemSize">Size : 30</text>
+                    </div>
+                    <div class="itemCounter">
+                        <!-- <text>Quantity : </text> -->
+                        <button class="decrease">-</button>
+                        <input class="count" type="number" min="0" value="1">
+                        <button class="increase">+</button>
+                    </div>
+                    <div class="itemPriceRemove">
+                        <text class="totalPrice">Total Price : <b>2100 Rs</b></text>
+                        <br>
+                        <br>
+                        <text class="itemPrice">Price per item : 2100 Rs</text>
+                        <br>
+                        <br>
+                        <br>
+                        <button class="remove">Remove</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="rightColumn">
+                
+                
+                <text class="totalCost">Total items :</text>
+                <text class="amount">3</text>
+                <text class="totalCost">Total Cost :</text>
+                <text class="amount">3000 Rs</text>
+                <br>
+                <br>
+                <button class="proceed">PROCEED TO PAY</button>
+            </div>
+        </div>
+    </body>
+</html>
