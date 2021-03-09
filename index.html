@@ -6,82 +6,82 @@
     </head>
 
     <body>
-        <h1 class="heading">Shopping Cart</h1>
+        <header class="heading">
+            <h1>Shopping Cart</h1>
+        </header>
 
-        <div class="row">
+        <div class="columnContainer">
             <div class="leftColumn">
                 <h2 class="yourCart">Your Cart</h2>
-
-                <div class="item1">
+                <div class="item1Container">
                     <img class="itemImage" src="./assets/tshirt.png" alt="T-shirt Image">
                     <div class="itemDescription">
-                        <text class="itemName">T-shirt</text>
-                        <br>
+                        <text id="itemName" class="itemName">T-shirt</text>
                         <br>
                         <text class="itemColor">Color : Blue</text>
                         <br>
                         <text class="itemSize">Size : M</text>
                     </div>
-                    <div class="itemCounter">
-                        <!-- <text>Quantity : </text> -->
-                        <button class="decrease">-</button>
-                        <input class="count" type="number" min="0" value="2">
-                        <button class="increase">+</button>
+                    <div class="itemCounterContainer">
+                        <button class="decreaseCounterButton">-</button>
+                        <input class="itemCounter" type="number" min="0" value="2">
+                        <button class="increaseCounterButton">+</button>
                     </div>
-                    <div class="itemPriceRemove">
-                        <text class="totalPrice">Total Price : <b>900 Rs</b></text>
-                        <br>
-                        <br>
-                        <text class="itemPrice">Price per item : 450 Rs</text>
-                        <br>
-                        <br>
-                        <br>
-                        <button class="remove">Remove</button>
+                    <div class="itemPriceAndRemoveButtonContainer">
+                        <div class="totalAndPerItemPriceContainer">
+                            <text class="totalPrice">Total Price : <b>900 Rs</b></text>
+                            <text class="itemPrice">Price per item : 450 Rs</text>
+                        </div>
+                        <div class="removeButtonContainer">
+                            <button class="removeButton">Remove</button>
+                        </div>
                     </div>
                 </div>
 
                 <hr>
 
-                <div class="item2">
+                <div class="item2Container">
                     <img class="itemImage" src="./assets/pant.png" alt="Jeans Image">
                     <div class="itemDescription">
                         <text class="itemName">Jeans Pant</text>
-                        <br>
                         <br>
                         <text class="itemColor">Color : Blue</text>
                         <br>
                         <text class="itemSize">Size : 30</text>
                     </div>
-                    <div class="itemCounter">
-                        <!-- <text>Quantity : </text> -->
-                        <button class="decrease">-</button>
-                        <input class="count" type="number" min="0" value="1">
-                        <button class="increase">+</button>
+                    <div class="itemCounterContainer">
+                        <button class="decreaseCounterButton">-</button>
+                        <input class="itemCounter" type="number" min="1" value="1">
+                        <button class="increaseCounterButton">+</button>
                     </div>
-                    <div class="itemPriceRemove">
-                        <text class="totalPrice">Total Price : <b>2100 Rs</b></text>
-                        <br>
-                        <br>
-                        <text class="itemPrice">Price per item : 2100 Rs</text>
-                        <br>
-                        <br>
-                        <br>
-                        <button class="remove">Remove</button>
+                    <div class="itemPriceAndRemoveButtonContainer">
+                        <div class="totalAndPerItemPriceContainer">
+                            <text class="totalPrice">Total Price : <b>2100 Rs</b></text>
+                            <text class="itemPrice">Price per item : 2100 Rs</text>
+                        </div>
+                        <div class="removeButtonContainer">
+                            <button class="removeButton">Remove</button>
+                        </div>
                     </div>
                 </div>
+                <hr>
             </div>
 
             <div class="rightColumn">
                 
-                
-                <text class="totalCost">Total items :</text>
-                <text class="amount">3</text>
-                <text class="totalCost">Total Cost :</text>
-                <text class="amount">3000 Rs</text>
-                <br>
-                <br>
-                <button class="proceed">PROCEED TO PAY</button>
+                <div class="totalItemContainer">
+                    <text class="totalItemText">Total Items :</text>
+                    <text class="totalItem">3</text>
+                </div>
+                <div class="totalCostContainer">
+                    <text class="totalCostText">Total Cost :</text>
+                    <text class="totalCost">3000 Rs</text>
+                </div>
+                <div class="proceedButtonContainer">
+                    <button class="proceedButton">PROCEED TO PAY</button>
+                </div>
             </div>
         </div>
+        
     </body>
 </html>
