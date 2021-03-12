@@ -1,10 +1,7 @@
 body{
-    height:100%;
-    width: 100%;
-    padding:0;
     margin:0;
+    height: 100%;
     font-size: 16px;
-    /* background-color: #bbf0ea; */
 }
 
 .heading{
@@ -21,100 +18,97 @@ body{
 }
 
 .leftColumn,.rightColumn{
-    margin: 0;
     box-sizing: border-box;
     padding: 1rem;
 }
 
 .leftColumn{
-    display: flex;
-    flex-direction: column;
     min-width: 30rem;
     flex-grow: 7;
-    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+.emptyLeftColumn{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: red;
 }
 
 .rightColumn{
     flex-grow: 3;
     max-height: 20rem;
+    margin: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: #bbf0ea;
+    border: 0.2rem solid #07AF9B;
+    background-color: #cbf0ea;
 }
 
-hr{
-    border-color: gray;
-    border-width: 0.01rem;
-    width: 90%;
-    margin-left: 5%;
-}
 
-.yourCart{
+
+.yourCartText{
     position: relative;
     left: 2rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.item1Container,.item2Container{
+.itemContainer{
     display: flex;
     flex-direction: row;
-}
-
-.item1Container{
-    margin-top: 3rem;
-    
-}
-.itemImage,.itemDescription,.itemCounterContainer,.itemPriceAndRemoveButtonContainer{
-    padding: 1rem;
+    border-bottom: 0.1rem solid black;
+    margin-bottom: 1rem;
 }
 
 .itemImage{
-    max-width: 10rem;
-    max-height: 10rem;
     flex-grow: 1;
+    max-width: 10rem;
+    padding: 1rem;
 }
 
 .itemDescription{
-    flex-grow: 3;
+    flex-grow: 4;
+    max-width: 22rem;  
+    padding: 1rem;  
 }
 .itemName{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
     font-weight: bold;
+    margin-top: 0;
     font-size: 1.5rem;
 }
-.itemColor{
-    margin-top: 1rem;
-}
+
 
 .itemCounterContainer{
     flex-grow: 1;
+    padding: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: fit-content;
+    align-items: flex-start;
 }
-.decreaseCounterButton,.increaseCounterButton{
+.counterButton{
     font-size: 1.5rem;
 }
 .itemCounter{
     text-align: center;
     max-width: 4rem;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     margin-left: 0;
 }
 
 
 .itemPriceAndRemoveButtonContainer{
     flex-grow: 2;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    
 }
 .totalPrice{
     font-size: 1.5rem;
+    font-weight: bold;
 }
 .totalAndPerItemPriceContainer{
     display: flex;
@@ -129,12 +123,21 @@ hr{
 
 }
 .removeButton{
-    background-color: red;
+    background-color: transparent;
+    color: red;
     font-size: 1.2rem;
     border-radius: 0.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    border: 0;
+}
+.removeButton:hover{
+    background-color: red;
+    font-weight: bold;
+    color: white;
 }
 
-.removeButton,.proceedButton{ 
+.proceedButton{ 
     color: white;
     font-weight: bold;
     width: fit-content;
@@ -146,23 +149,28 @@ hr{
     background-color: black;
 }
 
-.totalItemContainer,.totalCostContainer{
+.totalValueContainer{
     display: flex;
+    flex-direction: row;
 }
-.totalCostText,.totalItemText{
+.totalDescriptionText{
     flex-grow: 1;
     font-size: 1.4rem;
     font-weight: bold;
     display: flex;
     align-items: center;
 }
-.totalCost,.totalItem{
+.totalValue{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     flex-grow: 1;
     font-size: 2rem;
     justify-content: flex-end;
     font-weight: bold;
     display: flex;
     align-items: center;
+}
+#totalCost{
+    margin-left: 1rem;
 }
 
 .proceedButtonContainer
