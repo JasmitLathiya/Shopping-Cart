@@ -1,20 +1,16 @@
- (async function fetchProductData() {
-    await fetch('./jsonData/productDetails.json')
+(function fetchProductData() {
+     fetch('./jsonData/productDetails.json')
             .then(response => response.json())
             .then(data => showDataOnScreen(data));
 })();
 
 function showDataOnScreen(data)
 {
-    const leftColumn = document.getElementById("leftColumn");
-
-    const totalItem = document.getElementById("totalItem");
-    const totalCost = document.getElementById("totalCost");
-
+    const productDetailsContainer = document.getElementById("productDetailsContainer");
 
     for(let i=0;i<data.length;i++)
     {
-        leftColumn.innerHTML += `
+        productDetailsContainer.innerHTML += `
             <div id="itemContainer${data[i].id}" class="itemContainer">
                 <img class="itemImage" src="${data[i].image}" alt="${data[i].name} image">
                 <div class="itemDescription">
@@ -33,7 +29,7 @@ function showDataOnScreen(data)
                     <div class="totalAndPerItemPriceContainer">
                         <text class="totalPrice">
                             Total Price : <text>₹</text> 
-                            <text id="totalPrice${data[i].id}"> ${data[i].pricePerItem}</text>
+                            <text id="totalItemPrice${data[i].id}"> ${data[i].pricePerItem}</text>
                         </text>
                         <text class="itemPrice">Price per item : ₹ ${data[i].pricePerItem}</text>
                     </div>
@@ -43,9 +39,10 @@ function showDataOnScreen(data)
                 </div>
             </div>
         `;
-        
-        totalItem.textContent = parseInt(totalItem.textContent) + 1;
-        totalCost.textContent = parseInt(totalCost.textContent) + data[i].pricePerItem;
+
+        // handleIncrease(data[i].id,data[i].pricePerItem);
+        increaseTotalCartItem();
+        increaseTotalCartCost(data[i].pricePerItem);
     }
 }
 

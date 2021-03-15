@@ -1,74 +1,167 @@
 function handleIncrease(id,pricePerItem)
 {
-    const counter = document.getElementById("itemCounter"+id);
-    const totalPrice = document.getElementById("totalPrice"+id);
-
-    const totalItem = document.getElementById("totalItem");
-    const totalCost = document.getElementById("totalCost");
-
-    let counterValue = parseInt(counter.value)
-    counterValue = counterValue + 1;
-
-    counter.value = counterValue;
-    totalPrice.textContent = counterValue * pricePerItem;   
-    totalItem.textContent = parseInt(totalItem.textContent) + 1;
-    totalCost.textContent = parseInt(totalCost.textContent) + pricePerItem;
+    increaseItemCounter(id);
+    increaseTotalItemPrice(id,pricePerItem);
+    increaseTotalCartItem();
+    increaseTotalCartCost(pricePerItem);
 }
-
 
 function handleDecrease(id,pricePerItem)
 {
-    const counter = document.getElementById("itemCounter"+id);
-    const totalPrice = document.getElementById("totalPrice"+id);
-
-    const totalItem = document.getElementById("totalItem");
-    const totalCost = document.getElementById("totalCost");
-
-    let counterValue = parseInt(counter.value)
-
-    if(counterValue===1)
+    const counterInt = parseInt(document.getElementById("itemCounter"+id).value);
+    if(counterInt===1)
     {
         //count become 0, Remove item from cart
         handleRemove(id);
+        return;
     }
-    else
-    {
-        counterValue = counterValue - 1;
 
-        counter.value = counterValue;
-        totalPrice.textContent = counterValue * pricePerItem;
-
-        totalItem.textContent = parseInt(totalItem.textContent) - 1;
-        totalCost.textContent = parseInt(totalCost.textContent) - parseInt(pricePerItem);
-    }
+    decreaseItemCounter(id);
+    decreaseTotalItemPrice(id,pricePerItem);
+    decreaseTotalCartItem();
+    decreaseTotalCartCost(pricePerItem);
 }
-
 
 function handleRemove(id)
-{ 
-    const counter = document.getElementById("itemCounter"+id);
-    const totalPrice = document.getElementById("totalPrice"+id);
-
-    const totalItem = document.getElementById("totalItem");
-    const totalCost = document.getElementById("totalCost");
-
-    totalItem.textContent = parseInt(totalItem.textContent) - parseInt(counter.value);
-    totalCost.textContent = parseInt(totalCost.textContent) - parseInt(totalPrice.textContent);
+{
+    removeTotalItemCountFromTotalCartItem(id);
+    removeTotalItemCostFromTotalCartCost(id);
+    setTotalItemPriceZero(id);
+    setItemCountZero(id);
+    document.getElementById("itemContainer"+id).style.display = "none";
     
-    counter.value = 0;
-    totalPrice.textContent = 0;
-    document.getElementById("itemContainer"+id).style.display = "none";   
+    checkForEmptyItemContainer(id);
+}
 
-    if(parseInt(totalItem.textContent) === 0)
+
+//increase button functions
+function increaseItemCounter(id)
+{
+    const counter = document.getElementById("itemCounter"+id);
+    let counterInt = parseInt(counter.value);
+
+    counterInt++;
+    counter.value = counterInt;
+}
+
+function increaseTotalItemPrice(id,pricePerItem)
+{
+    const totalItemPrice = document.getElementById("totalItemPrice"+id);
+    let totalItemPriceInt = parseInt(totalItemPrice.textContent);
+
+    totalItemPriceInt += pricePerItem;
+    totalItemPrice.textContent = totalItemPriceInt;
+}
+
+function increaseTotalCartItem()
+{
+    const totalCartItem = document.getElementById("totalCartItem");
+    let totalCartItemInt = parseInt(totalCartItem.textContent);
+
+    totalCartItemInt++;
+    totalCartItem.textContent = totalCartItemInt;
+}
+
+function increaseTotalCartCost(pricePerItem)
+{
+    const totalCartCost = document.getElementById("totalCartCost");
+    let totalCartCostInt = parseInt(totalCartCost.textContent);
+
+    totalCartCostInt += pricePerItem;
+    totalCartCost.textContent = totalCartCostInt;
+}
+
+
+
+//decrease button functions
+function decreaseItemCounter(id)
+{
+    const counter = document.getElementById("itemCounter"+id);
+    let counterInt = parseInt(counter.value);
+
+    counterInt--;
+    counter.value = counterInt;
+}
+
+function decreaseTotalItemPrice(id,pricePerItem)
+{
+    const totalItemPrice = document.getElementById("totalItemPrice"+id);
+    let totalItemPriceInt = parseInt(totalItemPrice.textContent);
+    
+    totalItemPriceInt -= pricePerItem;
+    totalItemPrice.textContent = totalItemPriceInt;
+}
+
+function decreaseTotalCartItem()
+{
+    const totalCartItem = document.getElementById("totalCartItem");
+    let totalCartItemInt = parseInt(totalCartItem.textContent);
+    
+    totalCartItemInt--;
+    totalCartItem.textContent = totalCartItemInt;
+}
+
+function decreaseTotalCartCost(pricePerItem)
+{
+    const totalCartCost = document.getElementById("totalCartCost");
+    let totalCartCostInt = parseInt(totalCartCost.textContent);
+
+    totalCartCostInt -= pricePerItem;
+    totalCartCost.textContent = totalCartCostInt;
+}
+
+
+
+// Remove button functions
+function setItemCountZero(id)
+{
+    const counter = document.getElementById("itemCounter"+id);
+    counter.value=0;
+}
+
+function setTotalItemPriceZero(id)
+{
+    const totalItemPrice = document.getElementById("totalItemPrice"+id);
+    totalItemPrice.textContent = 0;
+}
+
+function removeTotalItemCountFromTotalCartItem(id)
+{
+    const counterInt = parseInt(document.getElementById("itemCounter"+id).value);
+    const totalCartItem = document.getElementById("totalCartItem");
+    totalCartItemInt = parseInt(totalCartItem.textContent);
+
+    totalCartItemInt -= counterInt;
+    totalCartItem.textContent = totalCartItemInt;
+}
+
+function removeTotalItemCostFromTotalCartCost(id)
+{
+    const totalCartCost = document.getElementById("totalCartCost");
+    let totalCartCostInt = parseInt(totalCartCost.textContent);
+    let totalItemPrice = parseInt(document.getElementById("totalItemPrice"+id).textContent);
+
+    totalCartCostInt -= totalItemPrice;
+    totalCartCost.textContent = totalCartCostInt;
+}
+
+function checkForEmptyItemContainer(id)
+{
+    const totalCartItemInt = parseInt(document.getElementById("totalCartItem").textContent);
+    if(totalCartItemInt === 0)
     {
-        const leftColumn = document.getElementById("leftColumn");
-
-        leftColumn.innerHTML =`
-            <h2 class="emptyLeftColumn">Cart is empty!!</h2>
-            <h2 class="emptyLeftColumn">Please add atleast 1 item in cart to proceed</h2>
-        `;
-
-        document.getElementById("rightColumn").style.display ="none";
+        showEmptyCartDetails();
     }
 }
 
+function showEmptyCartDetails()
+{
+    const productDetailsContainer = document.getElementById("productDetailsContainer");
+
+    productDetailsContainer.innerHTML =`
+        <h2 class="emptyProductDetailsContainer">Cart is empty!!</h2>
+        <h2 class="emptyProductDetailsContainer">Please add atleast 1 item in cart to proceed</h2>
+    `;
+
+    document.getElementById("cartItemCountAndCostContainer").style.display ="none";
+}   
