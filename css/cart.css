@@ -1,12 +1,16 @@
 body{
     margin:0;
+    box-sizing: border-box;
     font-size: 16px;
 }
 
 .heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #07AF9B;
     color: white;
-    padding: 0.2rem 0 0.2rem 1rem;
+    padding: 0 1rem 0 1rem;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -16,18 +20,14 @@ body{
     flex-wrap: wrap;
 }
 
-#productDetailsContainer,#cartItemCountAndCostContainer{
-    box-sizing: border-box;
-    padding: 1rem;
-}
-
-#productDetailsContainer{
-    min-width: 30rem;
-    flex-grow: 7;
+#allItemContainer{
     display: flex;
     flex-direction: column;
+    padding: 1rem;
+    min-width: 30rem;
+    flex-grow: 7;
 }
-.emptyProductDetailsContainer{
+.emptyAllItemContainer{
     display: flex;
     justify-content: center;
     align-content: center;
@@ -35,12 +35,13 @@ body{
 }
 
 #cartItemCountAndCostContainer{
-    flex-grow: 3;
-    max-height: 20rem;
-    margin: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    padding: 1rem;
+    flex-grow: 3;
+    max-height: 20rem;
+    margin: 2rem;
     border: 0.2rem solid #07AF9B;
     background-color: #cbf0ea;
 }
@@ -104,7 +105,6 @@ body{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    
 }
 .totalPrice{
     font-size: 1.5rem;
@@ -120,7 +120,6 @@ body{
     display: flex;
     flex-grow: 1;
     align-items: flex-end;  
-
 }
 .removeButton{
     background-color: transparent;

@@ -156,11 +156,11 @@ function checkForEmptyItemContainer(id)
 
 function showEmptyCartDetails()
 {
-    const productDetailsContainer = document.getElementById("productDetailsContainer");
+    const allItemContainer = document.getElementById("allItemContainer");
 
-    productDetailsContainer.innerHTML =`
-        <h2 class="emptyProductDetailsContainer">Cart is empty!!</h2>
-        <h2 class="emptyProductDetailsContainer">Please add atleast 1 item in cart to proceed</h2>
+    allItemContainer.innerHTML =`
+        <h2 class="emptyAllItemContainer">Cart is empty!!</h2>
+        <h2 class="emptyAllItemContainer">Please add atleast 1 item in cart to proceed</h2>
     `;
 
     document.getElementById("cartItemCountAndCostContainer").style.display ="none";
