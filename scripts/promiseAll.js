@@ -3,7 +3,7 @@ var promises = [];
 var p1 = Promise.resolve(3);
 var p2 = Promise.resolve(1337);
 var p3 = new Promise((resolve, reject) => {
-    reject("foo");
+    resolve("foo");
 });
 
 promises.push(p1,p2,p3);

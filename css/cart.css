@@ -68,7 +68,7 @@ body{
     padding: 1rem;
 }
 
-.itemDescription{
+.itemDiscription{
     flex-grow: 4;
     max-width: 22rem;  
     padding: 1rem;  

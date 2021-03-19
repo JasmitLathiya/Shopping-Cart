@@ -1,3 +1,5 @@
+import {showEmptyCartDetails} from './createItemHtmlElement.js';
+
 function handleIncrease(id,pricePerItem)
 {
     increaseItemCounter(id);
@@ -32,6 +34,8 @@ function handleRemove(id)
     
     checkForEmptyItemContainer(id);
 }
+
+export {handleIncrease,handleDecrease,handleRemove}
 
 
 //increase button functions
@@ -129,7 +133,7 @@ function removeTotalItemCountFromTotalCartItem(id)
 {
     const counterInt = parseInt(document.getElementById("itemCounter"+id).value);
     const totalCartItem = document.getElementById("totalCartItem");
-    totalCartItemInt = parseInt(totalCartItem.textContent);
+    let totalCartItemInt = parseInt(totalCartItem.textContent);
 
     totalCartItemInt -= counterInt;
     totalCartItem.textContent = totalCartItemInt;
@@ -145,7 +149,7 @@ function removeTotalItemCostFromTotalCartCost(id)
     totalCartCost.textContent = totalCartCostInt;
 }
 
-function checkForEmptyItemContainer(id)
+function checkForEmptyItemContainer()
 {
     const totalCartItemInt = parseInt(document.getElementById("totalCartItem").textContent);
     if(totalCartItemInt === 0)
@@ -153,15 +157,3 @@ function checkForEmptyItemContainer(id)
         showEmptyCartDetails();
     }
 }
-
-function showEmptyCartDetails()
-{
-    const allItemContainer = document.getElementById("allItemContainer");
-
-    allItemContainer.innerHTML =`
-        <h2 class="emptyAllItemContainer">Cart is empty!!</h2>
-        <h2 class="emptyAllItemContainer">Please add atleast 1 item in cart to proceed</h2>
-    `;
-
-    document.getElementById("cartItemCountAndCostContainer").style.display ="none";
-}   
