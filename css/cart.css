@@ -27,14 +27,14 @@ body{
     min-width: 30rem;
     flex-grow: 7;
 }
-.emptyAllItemContainer{
+.emptyCart{
     display: flex;
     justify-content: center;
     align-content: center;
     color: red;
 }
 
-#cartItemCountAndCostContainer{
+#cartTotalContainer{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;

@@ -1,0 +1,3 @@
+let cartTotalModel ={}
+
+export {cartTotalModel}
