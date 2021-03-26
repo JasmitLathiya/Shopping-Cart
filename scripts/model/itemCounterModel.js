@@ -1,4 +1,4 @@
-let itemCounterModel ={
+const itemCounterModel ={
     init : function(id,pricePerItem)
     {
         this.id = id;

@@ -1,4 +1,4 @@
-let increaseButtonModel = {
+const increaseButtonModel = {
     init : function(id,pricePerItem)
     {
         this.id = id;

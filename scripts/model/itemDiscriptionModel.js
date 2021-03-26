@@ -1,4 +1,4 @@
-let itemDiscriptionModel = {
+const itemDiscriptionModel = {
     init : function(name,color,size)
     {
         this.data = {

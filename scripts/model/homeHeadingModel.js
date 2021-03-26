@@ -1,4 +1,4 @@
-let homeHeadingModel = {
+const homeHeadingModel = {
     cartIconSrc : '../assets/icons/cart.png' 
 }
 

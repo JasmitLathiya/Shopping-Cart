@@ -1,7 +1,7 @@
 import {homeHeadingModel} from '../model/homeHeadingModel.js'
 import {homeHeadingView} from '../view/homeHeadingView.js'
 
-let homeHeadingController = {
+const homeHeadingController = {
     init : function(){
         homeHeadingView.init();
     },

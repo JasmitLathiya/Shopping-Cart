@@ -1,6 +1,6 @@
 import {itemDiscriptionController} from '../controller/itemDiscriptionController.js'
 
-let itemDiscriptionView = {
+const itemDiscriptionView = {
     init : function(){
         this.data = itemDiscriptionController.getDiscriptionData();
         return this.render();
@@ -17,20 +17,20 @@ let itemDiscriptionView = {
         return this.itemDiscription;
     },
     createItemName : function(name){
-        let itemName = document.createElement("p");
+        const itemName = document.createElement("p");
         itemName.innerHTML = name;
         itemName.className = "itemName";
         return itemName;
     },
     createItemColor : function(color){
-        let itemColor = document.createElement("text");
+        const itemColor = document.createElement("text");
         itemColor.innerHTML = "Color : " + color;
         itemColor.className = "itemColor";
         return itemColor;
     },
     createItemSize : function(size)
     {
-        let itemSize = document.createElement("text");
+        const itemSize = document.createElement("text");
         itemSize.innerHTML = "Size : " + size;
         itemSize.className = "itemSize";
         return itemSize;

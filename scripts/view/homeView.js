@@ -1,7 +1,7 @@
 import {homeController} from '../controller/homeController.js'
 import {itemController} from '../controller/itemController.js'
 
-let homeView = {
+const homeView = {
     init : function(){
         this.allItemContainer = document.getElementById("allItemContainer");
         this.data = homeController.getProductData();

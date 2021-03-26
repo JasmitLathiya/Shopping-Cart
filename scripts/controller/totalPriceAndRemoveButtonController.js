@@ -1,7 +1,7 @@
 import {totalPriceAndRemoveButtonModel} from "../model/totalPriceAndRemoveButtonModel.js"
 import {totalPriceAndRemoveButtonView} from "../view/totalPriceAndRemoveButtonView.js"
 
-let totalPriceAndRemoveButtonController = {
+const totalPriceAndRemoveButtonController = {
     init : function(id,pricePerItem){
         totalPriceAndRemoveButtonModel.init(id,pricePerItem);
         return totalPriceAndRemoveButtonView.init();

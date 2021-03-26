@@ -1,4 +1,4 @@
-let totalPriceAndRemoveButtonModel = {
+const totalPriceAndRemoveButtonModel = {
     init : function(id,pricePerItem)
     {
         this.id = id;

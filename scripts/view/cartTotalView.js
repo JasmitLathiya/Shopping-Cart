@@ -1,6 +1,6 @@
 import {cartTotalController} from '../controller/cartTotalController.js'
 
-let cartTotalView = {
+const cartTotalView = {
     init : function()
     {
         this.cartTotalContainer = document.getElementById("cartTotalContainer");

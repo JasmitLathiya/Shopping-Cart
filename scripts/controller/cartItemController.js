@@ -1,8 +1,7 @@
 import {cartItemModel} from '../model/cartItemModel.js'
 import {cartItemView} from '../view/cartItemView.js'
-import {cartTotalController} from '../controller/cartTotalController.js'
 
-let cartItemController = {
+const cartItemController = {
     init : function(data)
     {
         cartItemModel.init(data);

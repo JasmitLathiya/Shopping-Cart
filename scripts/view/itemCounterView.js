@@ -3,7 +3,7 @@ import {increaseButtonController} from '../controller/increaseButtonController.j
 import {decreaseButtonController} from '../controller/decreaseButtonController.js'
 
 
-let itemCounterView = {
+const itemCounterView = {
     init : function()
     {
         this.id = itemCounterController.getItemId();
@@ -21,7 +21,7 @@ let itemCounterView = {
     },
     createCounter : function(id)
     {
-        let itemCounter = document.createElement("input");
+        const itemCounter = document.createElement("input");
         itemCounter.className = "itemCounter";
         itemCounter.id = "itemCounter" + id;
         itemCounter.setAttribute("type","number");

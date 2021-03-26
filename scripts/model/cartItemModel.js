@@ -1,4 +1,4 @@
-let cartItemModel = {
+const cartItemModel = {
     init : function(data)
     {
         this.data = data;

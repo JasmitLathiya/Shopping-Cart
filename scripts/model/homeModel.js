@@ -1,7 +1,7 @@
 import {homeController} from '../controller/homeController.js'
 import {constantValue} from '../registry.js'
 
-let homeModel = {
+const homeModel = {
     init : function() 
     {
         localStorage.setItem(constantValue.localStorageVariable,JSON.stringify([]));  //remove previous data from local storage

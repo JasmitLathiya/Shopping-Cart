@@ -1,6 +1,6 @@
 import {decreaseButtonController} from '../controller/decreaseButtonController.js'
 
-let decreaseButtonView = {
+const decreaseButtonView = {
     init : function()
     {
         this.id = decreaseButtonController.getItemId();

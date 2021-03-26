@@ -1,6 +1,6 @@
 import {homeHeadingController} from '../controller/homeHeadingController.js'
 
-let homeHeadingView = {
+const homeHeadingView = {
     init : function()
     {
         this.cartIconSrc = homeHeadingController.getCartIconSrc();

@@ -2,7 +2,7 @@ import {addToCartModel} from '../model/addToCartModel.js';
 import {addToCartView} from '../view/addToCartView.js';
 import {constantValue} from '../registry.js'
 
-let addToCartConroller = {
+const addToCartConroller = {
     init : function(data)
     {
         addToCartModel.init(data);

@@ -1,7 +1,7 @@
 import {cartController} from '../controller/cartController.js'
 import {cartItemController} from '../controller/cartItemController.js'
 
-let cartView = {
+const cartView = {
     init : function(){
         this.allItemContainer = document.getElementById("allItemContainer");
         this.data = cartController.getProductData();

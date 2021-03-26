@@ -1,8 +1,7 @@
 import {removeButtonModel} from '../model/removeButtonModel.js'
-import { itemCounterView } from '../view/itemCounterView.js';
 import {removeButtonView} from '../view/removeButtonView.js';
 
-let removeButtonController = {
+const removeButtonController = {
     init : function(id)
     {
         removeButtonModel.init(id);
@@ -22,7 +21,6 @@ let removeButtonController = {
     {
         let totalCartItem = parseInt(document.getElementById("totalCartItem").textContent);
         const itemCount = parseInt(document.getElementById("itemCounter"+id).value);
-
         totalCartItem -= itemCount;
         removeButtonView.setTotalItem(totalCartItem);
     },

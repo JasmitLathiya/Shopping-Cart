@@ -3,7 +3,7 @@ import {decreaseButtonView} from '../view/decreaseButtonView.js'
 import {removeButtonController} from '../controller/removeButtonController.js'
 import {cartTotalController} from '../controller/cartTotalController.js'
 
-let decreaseButtonController = {
+const decreaseButtonController = {
     init : function(id,pricePerItem)
     {
         decreaseButtonModel.init(id,pricePerItem);

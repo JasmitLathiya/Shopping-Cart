@@ -1,6 +1,6 @@
 import {addToCartConroller} from '../controller/addToCartController.js';
 
-let addToCartView = {
+const addToCartView = {
     init : function(){
         this.data = addToCartConroller.getItemData();
         return this.render();

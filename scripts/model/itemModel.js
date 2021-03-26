@@ -1,4 +1,4 @@
-let itemModel = {
+const itemModel = {
     init : function(data)
     {
         this.data = data;

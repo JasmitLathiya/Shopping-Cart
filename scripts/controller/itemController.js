@@ -1,7 +1,7 @@
 import {itemView} from '../view/itemView.js'
 import {itemModel} from '../model/itemModel.js'
 
-let itemController = {
+const itemController = {
     init : function(data)
     {
         itemModel.init(data);

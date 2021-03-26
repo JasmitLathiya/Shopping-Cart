@@ -2,7 +2,7 @@ import {homeModel} from '../model/homeModel.js'
 import {homeView} from '../view/homeView.js'
 import {homeHeadingController} from '../controller/homeHeadingController.js'
 
-let homeController ={
+const homeController ={
     init :function(){    
         homeHeadingController.init();    
         homeModel.init();

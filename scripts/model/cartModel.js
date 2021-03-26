@@ -1,6 +1,6 @@
 import {constantValue} from '../registry.js'
 
-let cartModel = {
+const cartModel = {
     
         data : JSON.parse(localStorage.getItem(constantValue.localStorageVariable))
         // data : [

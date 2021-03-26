@@ -1,3 +1,3 @@
-let cartTotalModel ={}
+const cartTotalModel ={}
 
 export {cartTotalModel}

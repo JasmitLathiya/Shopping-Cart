@@ -1,6 +1,6 @@
 import {removeButtonController} from '../controller/removeButtonController.js'
 
-let removeButtonView = {
+const removeButtonView = {
     init : function()
     {
         this.id = removeButtonController.getId();

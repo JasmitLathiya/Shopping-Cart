@@ -1,7 +1,7 @@
 import {itemCounterModel} from '../model/itemCounterModel.js'
 import {itemCounterView} from '../view/itemCounterView.js'
 
-let itemCounterController = {
+const itemCounterController = {
     init : function(id,pricePerItem)
     {
         itemCounterModel.init(id,pricePerItem);
